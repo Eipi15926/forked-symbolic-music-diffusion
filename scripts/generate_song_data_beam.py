@@ -95,6 +95,21 @@ class EncodeSong(beam.DoFn):
       Metrics.counter('EncodeSong', 'encoded_matrix').inc()
       yield pickle.dumps(matrix)
 
+def generate_song_db(argv):
+  del argv  # unused
+
+  pipeline_options = beam.options.pipeline_options.PipelineOptions(
+      FLAGS.pipeline_options.split(','))
+
+  with beam.Pipeline(options=pipeline_options) as p:
+    p |= 'tfrecord_list' >> beam.Create(FLAGS.input)
+    p |= 'read_tfrecord' >> beam.io.tfrecordio.ReadAllFromTFRecord(
+        coder=beam.coders.ProtoCoder(note_seq.NoteSequence))
+    p |= 'shuffle_input' >> beam.Reshuffle()
+    p |= 'encode_song' >> beam.ParDo(EncodeSong())
+    p |= 'shuffle_output' >> beam.Reshuffle()
+    p |= 'write' >> beam.io.WriteToTFRecord(FLAGS.output)
+
 
 def main(argv):
   del argv  # unused
