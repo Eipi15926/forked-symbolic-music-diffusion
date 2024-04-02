@@ -120,7 +120,7 @@ def save_shard(contexts, targets, output_path):
 
     contexts = contexts[FLAGS.shard_size:]
     targets = targets[FLAGS.shard_size:]
-
+    
   output_path += '.' + FLAGS.output_format
 
   # Serialize shard
@@ -159,16 +159,17 @@ def toy_sequence_distribution_fn(trajectory_length=10, batch_size=512):
 
 def main(argv):
   del argv  # unused
-
+  print("enc path",FLAGS.encoded_data)
   if FLAGS.mode == 'decoded':
     train_glob = f'{FLAGS.encoded_data}/decoded-train.tfrecord-*'
     eval_glob = f'{FLAGS.encoded_data}/decoded-eval.tfrecord-*'
   else:
     train_glob = f'{FLAGS.encoded_data}/training_seqs.tfrecord-*'
     eval_glob = f'{FLAGS.encoded_data}/eval_seqs.tfrecord-*'
-
+  print(os.path.expanduser(train_glob))
   train_files = glob.glob(os.path.expanduser(train_glob))
   eval_files = glob.glob(os.path.expanduser(eval_glob))
+  print("trainfile len",len(train_files))
 
   tensor_shape = [tf.float64]
   train_dataset = tf.data.TFRecordDataset(

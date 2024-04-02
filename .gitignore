@@ -10,3 +10,11 @@ save
 checkpoints/eval
 *.wav
 experiments/
+save/
+audio-midi/
+latent-samples/
+preprocess_tfrecords/
+checkpoints/
+vae_output/
+datans/
+fluid/

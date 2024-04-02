@@ -40,7 +40,7 @@ import utils.song_utils as song_utils
 import utils.train_utils as train_utils
 import utils.metrics as metrics
 import config
-import train_lm
+# import train_lm
 
 FLAGS = flags.FLAGS
 SYNTH = note_seq.fluidsynth
@@ -98,6 +98,7 @@ def decode_emb(emb, model, data_converter, chunks_only=False):
       count += 1
       recon = song_utils.embeddings_to_song(emb_sample, model, data_converter)
       samples.append(recon)
+      print("sample_size:{}".format(len(samples)))
 
   return samples
 
@@ -129,7 +130,8 @@ def main(argv):
   # Get VAE model.
   if FLAGS.melody:
     model_config = config.MUSIC_VAE_CONFIG['melody-2-big']
-    ckpt = os.path.expanduser('~/checkpoints/cat-mel_2bar_big.tar')
+    #ckpt = os.path.expanduser('~/checkpoints/cat-mel_2bar_big.tar')
+    ckpt = os.path.expanduser('/home/iid/wxy/symbolic-music-diffusion/checkpoints/musicvae_ckpt/cat-mel_2bar_big.tar')
     vae_model = TrainedModel(model_config,
                              batch_size=1,
                              checkpoint_dir_or_path=ckpt)
