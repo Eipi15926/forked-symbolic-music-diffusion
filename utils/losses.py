@@ -247,7 +247,7 @@ def sliced_score_matching_loss(batch,
   return reduce_fn(loss, reduction)
 
 
-def diffusion_loss(batch,
+def diffusion_loss(batchxy,
                    model,
                    betas,
                    rng,
@@ -267,6 +267,7 @@ def diffusion_loss(batch,
     Loss value. If `reduction` is `none`, this has the same shape as `data`;
     otherwise, it is scalar.
   """
+  batch = batchxy[0] # batchxy is a tuple, x is batch=batchxy[0], y is batchxy[1]
   T = len(betas)
   rng, label_rng, sample_rng = jax.random.split(rng, num=3)
   labels = jax.random.randint(key=label_rng,
@@ -296,7 +297,7 @@ def diffusion_loss(batch,
                                                               used_alphas) * eps
 
   # if continuous_noise:
-  pred = model(perturbed_sample,
+  pred = model((perturbed_sample,batchxy[1]),
                jnp.sqrt(used_alphas))  # condition on noise level.
   # else:
   # pred = model(perturbed_sample, t)  # condition on timestep.

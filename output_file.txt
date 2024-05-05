@@ -1,0 +1,5871 @@
+id: "/id/musicxml/minibach/dc3e9bace15a59ea4a5615fbb4687e751c3dbda3"
+filename: "/home/iid/wxy/forked-symbolic-music-diffusion/datasets/minibach/bwv1.6.mxl"
+collection_name: "minibach"
+ticks_per_quarter: 220
+time_signatures {
+  numerator: 4
+  denominator: 4
+}
+time_signatures {
+  time: 38.5
+  numerator: 3
+  denominator: 4
+}
+time_signatures {
+  numerator: 1
+  denominator: 4
+}
+time_signatures {
+  time: 0.5
+  numerator: 4
+  denominator: 4
+}
+key_signatures {
+  key: F
+}
+tempos {
+  qpm: 120.0
+}
+notes {
+  pitch: 65
+  velocity: 64
+  end_time: 0.5
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 0.5
+  end_time: 0.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 0.75
+  end_time: 1.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 1.0
+  end_time: 1.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 1.25
+  end_time: 1.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 1.5
+  end_time: 1.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 1.75
+  end_time: 2.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 2.0
+  end_time: 2.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 2.25
+  end_time: 2.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 2.5
+  end_time: 2.625
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 2.625
+  end_time: 2.75
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 2.75
+  end_time: 2.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 2.875
+  end_time: 3.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 3.0
+  end_time: 3.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 3.25
+  end_time: 3.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 3.5
+  end_time: 4.0
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 4.0
+  end_time: 4.5
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 4.5
+  end_time: 4.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 4.75
+  end_time: 4.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 4.875
+  end_time: 5.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 5.0
+  end_time: 5.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 5.25
+  end_time: 5.375
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 5.375
+  end_time: 5.5
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 5.5
+  end_time: 5.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 5.75
+  end_time: 6.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 6.0
+  end_time: 6.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 6.25
+  end_time: 6.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 6.5
+  end_time: 6.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 71
+  velocity: 64
+  start_time: 6.75
+  end_time: 6.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 6.875
+  end_time: 7.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 71
+  velocity: 64
+  start_time: 7.0
+  end_time: 7.5
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 7.5
+  end_time: 8.0
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 8.0
+  end_time: 8.5
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 8.5
+  end_time: 8.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 8.75
+  end_time: 9.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 9.0
+  end_time: 9.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 9.25
+  end_time: 9.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 9.5
+  end_time: 9.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 9.75
+  end_time: 10.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 10.0
+  end_time: 10.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 10.25
+  end_time: 10.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 10.5
+  end_time: 10.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 10.75
+  end_time: 10.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 10.875
+  end_time: 11.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 11.0
+  end_time: 11.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 11.25
+  end_time: 11.375
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 11.375
+  end_time: 11.5
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 11.5
+  end_time: 12.0
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 12.0
+  end_time: 12.5
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 12.5
+  end_time: 12.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 12.75
+  end_time: 13.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 13.0
+  end_time: 13.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 13.25
+  end_time: 13.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 13.5
+  end_time: 13.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 13.75
+  end_time: 14.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 14.0
+  end_time: 14.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 14.25
+  end_time: 14.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 14.5
+  end_time: 14.625
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 14.625
+  end_time: 14.75
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 14.75
+  end_time: 14.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 14.875
+  end_time: 15.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 15.0
+  end_time: 15.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 15.25
+  end_time: 15.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 15.5
+  end_time: 16.0
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 16.0
+  end_time: 16.5
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 16.5
+  end_time: 16.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 16.75
+  end_time: 16.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 16.875
+  end_time: 17.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 17.0
+  end_time: 17.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 17.25
+  end_time: 17.375
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 17.375
+  end_time: 17.5
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 17.5
+  end_time: 17.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 17.75
+  end_time: 18.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 18.0
+  end_time: 18.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 18.25
+  end_time: 18.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 18.5
+  end_time: 18.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 71
+  velocity: 64
+  start_time: 18.75
+  end_time: 18.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 18.875
+  end_time: 19.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 71
+  velocity: 64
+  start_time: 19.0
+  end_time: 19.5
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 19.5
+  end_time: 20.0
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 20.0
+  end_time: 20.5
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 20.5
+  end_time: 20.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 20.75
+  end_time: 21.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 21.0
+  end_time: 21.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 21.25
+  end_time: 21.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 21.5
+  end_time: 21.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 21.75
+  end_time: 22.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 22.0
+  end_time: 22.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 22.25
+  end_time: 22.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 22.5
+  end_time: 22.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 22.75
+  end_time: 22.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 22.875
+  end_time: 23.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 23.0
+  end_time: 23.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 23.25
+  end_time: 23.375
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 23.375
+  end_time: 23.5
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 23.5
+  end_time: 24.0
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 24.5
+  end_time: 24.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 24.75
+  end_time: 24.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 24.875
+  end_time: 25.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 25.0
+  end_time: 25.125
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 25.125
+  end_time: 25.25
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 25.25
+  end_time: 25.375
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 25.375
+  end_time: 25.5
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 25.5
+  end_time: 26.5
+  numerator: 1
+  denominator: 2
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 26.5
+  end_time: 26.625
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 26.625
+  end_time: 26.75
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 26.75
+  end_time: 26.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 26.875
+  end_time: 27.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 27.0
+  end_time: 27.5
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 27.5
+  end_time: 28.5
+  numerator: 1
+  denominator: 2
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 28.5
+  end_time: 28.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 28.75
+  end_time: 29.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 29.0
+  end_time: 29.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 29.25
+  end_time: 29.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 29.5
+  end_time: 29.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 29.75
+  end_time: 29.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 29.875
+  end_time: 30.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 30.0
+  end_time: 30.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 30.25
+  end_time: 30.375
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 30.375
+  end_time: 30.5
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 30.5
+  end_time: 30.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 30.75
+  end_time: 31.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 31.0
+  end_time: 31.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 31.25
+  end_time: 31.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 31.5
+  end_time: 32.25
+  numerator: 3
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 32.25
+  end_time: 32.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 32.5
+  end_time: 32.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 32.75
+  end_time: 32.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 32.875
+  end_time: 33.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 33.0
+  end_time: 33.5
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 33.5
+  end_time: 33.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 33.75
+  end_time: 34.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 34.0
+  end_time: 34.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 34.25
+  end_time: 34.375
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 34.375
+  end_time: 34.5
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 34.5
+  end_time: 35.5
+  numerator: 1
+  denominator: 2
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 35.5
+  end_time: 35.625
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 35.625
+  end_time: 35.75
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 35.75
+  end_time: 35.875
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 35.875
+  end_time: 36.0
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 36.0
+  end_time: 36.5
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 36.5
+  end_time: 36.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 36.75
+  end_time: 37.25
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 37.25
+  end_time: 37.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 37.5
+  end_time: 37.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 37.75
+  end_time: 38.25
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 38.25
+  end_time: 38.5
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 38.5
+  end_time: 38.75
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 38.75
+  end_time: 39.0
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 39.0
+  end_time: 39.25
+  numerator: 1
+  denominator: 8
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 39.25
+  end_time: 39.375
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 39.375
+  end_time: 39.5
+  numerator: 1
+  denominator: 16
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 39.5
+  end_time: 40.0
+  numerator: 1
+  denominator: 4
+  instrument: 7
+  program: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  end_time: 0.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 0.5
+  end_time: 1.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 1.0
+  end_time: 1.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 1.5
+  end_time: 2.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 2.0
+  end_time: 2.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 2.5
+  end_time: 3.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 3.0
+  end_time: 3.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 3.5
+  end_time: 4.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 4.0
+  end_time: 4.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 4.5
+  end_time: 5.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 76
+  velocity: 64
+  start_time: 5.0
+  end_time: 5.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 77
+  velocity: 64
+  start_time: 5.5
+  end_time: 6.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 76
+  velocity: 64
+  start_time: 6.0
+  end_time: 6.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 6.5
+  end_time: 7.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 7.0
+  end_time: 7.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 7.5
+  end_time: 8.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 8.0
+  end_time: 8.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 8.5
+  end_time: 9.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 9.0
+  end_time: 9.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 9.5
+  end_time: 10.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 10.0
+  end_time: 10.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 10.5
+  end_time: 11.5
+  numerator: 1
+  denominator: 2
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 11.5
+  end_time: 12.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 12.0
+  end_time: 12.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 12.5
+  end_time: 13.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 13.0
+  end_time: 13.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 13.5
+  end_time: 14.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 14.0
+  end_time: 14.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 14.5
+  end_time: 15.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 15.0
+  end_time: 15.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 15.5
+  end_time: 16.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 16.0
+  end_time: 16.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 16.5
+  end_time: 17.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 76
+  velocity: 64
+  start_time: 17.0
+  end_time: 17.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 77
+  velocity: 64
+  start_time: 17.5
+  end_time: 18.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 76
+  velocity: 64
+  start_time: 18.0
+  end_time: 18.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 18.5
+  end_time: 19.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 19.0
+  end_time: 19.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 19.5
+  end_time: 20.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 20.0
+  end_time: 20.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 20.5
+  end_time: 21.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 21.0
+  end_time: 21.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 21.5
+  end_time: 22.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 22.0
+  end_time: 22.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 22.5
+  end_time: 23.5
+  numerator: 1
+  denominator: 2
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 23.5
+  end_time: 24.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 24.5
+  end_time: 25.5
+  numerator: 1
+  denominator: 2
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 25.5
+  end_time: 26.5
+  numerator: 1
+  denominator: 2
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 26.5
+  end_time: 27.5
+  numerator: 1
+  denominator: 2
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 27.5
+  end_time: 28.5
+  numerator: 1
+  denominator: 2
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 28.5
+  end_time: 29.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 29.0
+  end_time: 29.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 29.5
+  end_time: 30.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 30.0
+  end_time: 30.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 30.5
+  end_time: 31.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 31.0
+  end_time: 31.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 31.5
+  end_time: 32.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 32.0
+  end_time: 32.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 32.5
+  end_time: 33.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 33.0
+  end_time: 33.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 33.5
+  end_time: 34.5
+  numerator: 1
+  denominator: 2
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 34.5
+  end_time: 35.5
+  numerator: 1
+  denominator: 2
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 77
+  velocity: 64
+  start_time: 35.5
+  end_time: 36.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 76
+  velocity: 64
+  start_time: 36.0
+  end_time: 36.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 36.5
+  end_time: 37.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 37.0
+  end_time: 37.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 37.5
+  end_time: 38.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 38.0
+  end_time: 38.5
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 38.5
+  end_time: 39.5
+  numerator: 1
+  denominator: 2
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 39.5
+  end_time: 40.0
+  numerator: 1
+  denominator: 4
+  instrument: 1
+  program: 1
+  part: 1
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  end_time: 0.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 0.5
+  end_time: 1.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 1.0
+  end_time: 1.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 1.5
+  end_time: 2.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 2.0
+  end_time: 2.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 2.5
+  end_time: 3.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 3.0
+  end_time: 3.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 3.5
+  end_time: 4.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 4.0
+  end_time: 4.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 4.5
+  end_time: 5.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 5.0
+  end_time: 5.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 5.5
+  end_time: 5.75
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 5.75
+  end_time: 6.0
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 6.0
+  end_time: 6.25
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 6.25
+  end_time: 6.5
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 6.5
+  end_time: 7.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 7.0
+  end_time: 7.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 7.5
+  end_time: 8.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 8.0
+  end_time: 8.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 8.5
+  end_time: 9.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 9.0
+  end_time: 9.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 9.5
+  end_time: 9.75
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 9.75
+  end_time: 10.0
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 10.0
+  end_time: 10.25
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 10.25
+  end_time: 10.5
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 10.5
+  end_time: 11.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 11.0
+  end_time: 11.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 11.5
+  end_time: 12.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 12.0
+  end_time: 12.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 12.5
+  end_time: 13.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 13.0
+  end_time: 13.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 13.5
+  end_time: 14.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 14.0
+  end_time: 14.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 14.5
+  end_time: 15.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 15.0
+  end_time: 15.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 15.5
+  end_time: 16.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 16.0
+  end_time: 16.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 16.5
+  end_time: 17.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 70
+  velocity: 64
+  start_time: 17.0
+  end_time: 17.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 17.5
+  end_time: 17.75
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 74
+  velocity: 64
+  start_time: 17.75
+  end_time: 18.0
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 72
+  velocity: 64
+  start_time: 18.0
+  end_time: 18.25
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 18.25
+  end_time: 18.5
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 18.5
+  end_time: 19.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 19.0
+  end_time: 19.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 19.5
+  end_time: 20.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 20.0
+  end_time: 20.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 20.5
+  end_time: 21.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 21.0
+  end_time: 21.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 21.5
+  end_time: 21.75
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 21.75
+  end_time: 22.0
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 22.0
+  end_time: 22.25
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 22.25
+  end_time: 22.5
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 22.5
+  end_time: 23.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 23.0
+  end_time: 23.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 23.5
+  end_time: 24.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 24.5
+  end_time: 25.5
+  numerator: 1
+  denominator: 2
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 25.5
+  end_time: 26.5
+  numerator: 1
+  denominator: 2
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 26.5
+  end_time: 26.75
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 26.75
+  end_time: 26.875
+  numerator: 1
+  denominator: 16
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 26.875
+  end_time: 27.0
+  numerator: 1
+  denominator: 16
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 27.0
+  end_time: 27.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 27.5
+  end_time: 28.5
+  numerator: 1
+  denominator: 2
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 28.5
+  end_time: 29.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 29.0
+  end_time: 29.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 29.5
+  end_time: 30.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 30.0
+  end_time: 30.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 30.5
+  end_time: 31.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 31.0
+  end_time: 31.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 31.5
+  end_time: 32.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 32.0
+  end_time: 32.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 32.5
+  end_time: 33.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 33.0
+  end_time: 33.25
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 33.25
+  end_time: 33.5
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 33.5
+  end_time: 34.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 34.0
+  end_time: 34.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 34.5
+  end_time: 35.5
+  numerator: 1
+  denominator: 2
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 35.5
+  end_time: 36.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 69
+  velocity: 64
+  start_time: 36.0
+  end_time: 36.25
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 36.25
+  end_time: 36.5
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 36.5
+  end_time: 37.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 37.0
+  end_time: 37.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 37.5
+  end_time: 37.75
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 37.75
+  end_time: 38.0
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 38.0
+  end_time: 38.25
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 38.25
+  end_time: 38.5
+  numerator: 1
+  denominator: 8
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 38.5
+  end_time: 39.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 39.0
+  end_time: 39.5
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 39.5
+  end_time: 40.0
+  numerator: 1
+  denominator: 4
+  instrument: 2
+  program: 1
+  part: 2
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  end_time: 0.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 0.5
+  end_time: 1.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 1.0
+  end_time: 1.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 1.5
+  end_time: 2.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 2.0
+  end_time: 2.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 2.5
+  end_time: 3.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 3.0
+  end_time: 3.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 3.5
+  end_time: 4.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 4.0
+  end_time: 4.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 4.5
+  end_time: 5.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 5.0
+  end_time: 5.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 5.5
+  end_time: 5.75
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 5.75
+  end_time: 6.0
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 6.0
+  end_time: 6.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 6.5
+  end_time: 6.75
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 6.75
+  end_time: 7.0
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 7.0
+  end_time: 7.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 7.5
+  end_time: 8.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 8.0
+  end_time: 8.25
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 8.25
+  end_time: 8.5
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 8.5
+  end_time: 8.75
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 8.75
+  end_time: 9.0
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 9.0
+  end_time: 9.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 9.5
+  end_time: 9.75
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 9.75
+  end_time: 10.0
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 10.0
+  end_time: 10.25
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 10.25
+  end_time: 10.5
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 10.5
+  end_time: 10.75
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 10.75
+  end_time: 11.0
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 58
+  velocity: 64
+  start_time: 11.0
+  end_time: 11.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 11.5
+  end_time: 12.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 12.0
+  end_time: 12.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 12.5
+  end_time: 13.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 13.0
+  end_time: 13.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 13.5
+  end_time: 14.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 14.0
+  end_time: 14.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 14.5
+  end_time: 15.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 15.0
+  end_time: 15.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 15.5
+  end_time: 16.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 16.0
+  end_time: 16.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 16.5
+  end_time: 17.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 67
+  velocity: 64
+  start_time: 17.0
+  end_time: 17.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 17.5
+  end_time: 17.75
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 17.75
+  end_time: 18.0
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 18.0
+  end_time: 18.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 65
+  velocity: 64
+  start_time: 18.5
+  end_time: 18.75
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 18.75
+  end_time: 19.0
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 19.0
+  end_time: 19.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 64
+  velocity: 64
+  start_time: 19.5
+  end_time: 20.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 20.0
+  end_time: 20.25
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 20.25
+  end_time: 20.5
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 20.5
+  end_time: 20.75
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 20.75
+  end_time: 21.0
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 21.0
+  end_time: 21.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 21.5
+  end_time: 21.75
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 21.75
+  end_time: 22.0
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 22.0
+  end_time: 22.25
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 22.25
+  end_time: 22.5
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 22.5
+  end_time: 22.75
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 22.75
+  end_time: 23.0
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 58
+  velocity: 64
+  start_time: 23.0
+  end_time: 23.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 23.5
+  end_time: 24.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 24.5
+  end_time: 25.5
+  numerator: 1
+  denominator: 2
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 25.5
+  end_time: 26.5
+  numerator: 1
+  denominator: 2
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 26.5
+  end_time: 27.5
+  numerator: 1
+  denominator: 2
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 27.5
+  end_time: 28.5
+  numerator: 1
+  denominator: 2
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 28.5
+  end_time: 29.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 29.0
+  end_time: 29.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 29.5
+  end_time: 30.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 30.0
+  end_time: 30.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 30.5
+  end_time: 31.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 31.0
+  end_time: 31.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 31.5
+  end_time: 32.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 32.0
+  end_time: 32.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 32.5
+  end_time: 33.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 33.0
+  end_time: 33.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 33.5
+  end_time: 34.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 34.0
+  end_time: 34.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 34.5
+  end_time: 35.5
+  numerator: 1
+  denominator: 2
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 35.5
+  end_time: 36.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 36.0
+  end_time: 36.5
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 36.5
+  end_time: 36.75
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 58
+  velocity: 64
+  start_time: 36.75
+  end_time: 37.0
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 37.0
+  end_time: 37.25
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 37.25
+  end_time: 37.5
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 58
+  velocity: 64
+  start_time: 37.5
+  end_time: 38.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 38.0
+  end_time: 38.25
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 38.25
+  end_time: 38.5
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 38.5
+  end_time: 39.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 39.0
+  end_time: 39.125
+  numerator: 1
+  denominator: 16
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 39.125
+  end_time: 39.25
+  numerator: 1
+  denominator: 16
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 39.25
+  end_time: 39.5
+  numerator: 1
+  denominator: 8
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 39.5
+  end_time: 40.0
+  numerator: 1
+  denominator: 4
+  instrument: 3
+  program: 1
+  part: 3
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  end_time: 0.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 52
+  velocity: 64
+  start_time: 0.5
+  end_time: 1.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 1.0
+  end_time: 1.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 50
+  velocity: 64
+  start_time: 1.5
+  end_time: 2.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 45
+  velocity: 64
+  start_time: 2.0
+  end_time: 2.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 46
+  velocity: 64
+  start_time: 2.5
+  end_time: 2.75
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 48
+  velocity: 64
+  start_time: 2.75
+  end_time: 3.0
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 50
+  velocity: 64
+  start_time: 3.0
+  end_time: 3.25
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 52
+  velocity: 64
+  start_time: 3.25
+  end_time: 3.5
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 3.5
+  end_time: 4.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 4.0
+  end_time: 4.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 58
+  velocity: 64
+  start_time: 4.5
+  end_time: 5.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 5.0
+  end_time: 5.25
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 5.25
+  end_time: 5.5
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 5.5
+  end_time: 5.75
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 59
+  velocity: 64
+  start_time: 5.75
+  end_time: 6.0
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 6.0
+  end_time: 6.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 6.5
+  end_time: 7.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 7.0
+  end_time: 7.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 48
+  velocity: 64
+  start_time: 7.5
+  end_time: 8.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 8.0
+  end_time: 8.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 46
+  velocity: 64
+  start_time: 8.5
+  end_time: 9.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 48
+  velocity: 64
+  start_time: 9.0
+  end_time: 9.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 50
+  velocity: 64
+  start_time: 9.5
+  end_time: 9.75
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 52
+  velocity: 64
+  start_time: 9.75
+  end_time: 10.0
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 10.0
+  end_time: 10.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 48
+  velocity: 64
+  start_time: 10.5
+  end_time: 11.5
+  numerator: 1
+  denominator: 2
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 41
+  velocity: 64
+  start_time: 11.5
+  end_time: 12.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 12.0
+  end_time: 12.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 52
+  velocity: 64
+  start_time: 12.5
+  end_time: 13.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 13.0
+  end_time: 13.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 50
+  velocity: 64
+  start_time: 13.5
+  end_time: 14.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 45
+  velocity: 64
+  start_time: 14.0
+  end_time: 14.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 46
+  velocity: 64
+  start_time: 14.5
+  end_time: 14.75
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 48
+  velocity: 64
+  start_time: 14.75
+  end_time: 15.0
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 50
+  velocity: 64
+  start_time: 15.0
+  end_time: 15.25
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 52
+  velocity: 64
+  start_time: 15.25
+  end_time: 15.5
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 15.5
+  end_time: 16.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 16.0
+  end_time: 16.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 58
+  velocity: 64
+  start_time: 16.5
+  end_time: 17.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 17.0
+  end_time: 17.25
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 17.25
+  end_time: 17.5
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 17.5
+  end_time: 17.75
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 59
+  velocity: 64
+  start_time: 17.75
+  end_time: 18.0
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 18.0
+  end_time: 18.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 18.5
+  end_time: 19.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 19.0
+  end_time: 19.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 48
+  velocity: 64
+  start_time: 19.5
+  end_time: 20.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 20.0
+  end_time: 20.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 46
+  velocity: 64
+  start_time: 20.5
+  end_time: 21.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 48
+  velocity: 64
+  start_time: 21.0
+  end_time: 21.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 50
+  velocity: 64
+  start_time: 21.5
+  end_time: 21.75
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 52
+  velocity: 64
+  start_time: 21.75
+  end_time: 22.0
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 22.0
+  end_time: 22.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 48
+  velocity: 64
+  start_time: 22.5
+  end_time: 23.5
+  numerator: 1
+  denominator: 2
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 41
+  velocity: 64
+  start_time: 23.5
+  end_time: 24.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 52
+  velocity: 64
+  start_time: 24.5
+  end_time: 25.5
+  numerator: 1
+  denominator: 2
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 25.5
+  end_time: 26.5
+  numerator: 1
+  denominator: 2
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 48
+  velocity: 64
+  start_time: 26.5
+  end_time: 27.5
+  numerator: 1
+  denominator: 2
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 27.5
+  end_time: 28.5
+  numerator: 1
+  denominator: 2
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 28.5
+  end_time: 28.75
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 28.75
+  end_time: 29.0
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 29.0
+  end_time: 29.25
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 29.25
+  end_time: 29.5
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 48
+  velocity: 64
+  start_time: 29.5
+  end_time: 29.75
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 50
+  velocity: 64
+  start_time: 29.75
+  end_time: 30.0
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 52
+  velocity: 64
+  start_time: 30.0
+  end_time: 30.25
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 48
+  velocity: 64
+  start_time: 30.25
+  end_time: 30.5
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 30.5
+  end_time: 30.75
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 30.75
+  end_time: 31.0
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 31.0
+  end_time: 31.25
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 31.25
+  end_time: 31.5
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 31.5
+  end_time: 32.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 58
+  velocity: 64
+  start_time: 32.0
+  end_time: 32.25
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 32.25
+  end_time: 32.5
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 32.5
+  end_time: 33.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 62
+  velocity: 64
+  start_time: 33.0
+  end_time: 33.25
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 33.25
+  end_time: 33.5
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 58
+  velocity: 64
+  start_time: 33.5
+  end_time: 34.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 60
+  velocity: 64
+  start_time: 34.0
+  end_time: 34.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 34.5
+  end_time: 35.5
+  numerator: 1
+  denominator: 2
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 50
+  velocity: 64
+  start_time: 35.5
+  end_time: 35.75
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 35.75
+  end_time: 36.0
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 36.0
+  end_time: 36.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 46
+  velocity: 64
+  start_time: 36.5
+  end_time: 36.75
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 50
+  velocity: 64
+  start_time: 36.75
+  end_time: 37.0
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 53
+  velocity: 64
+  start_time: 37.0
+  end_time: 37.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 55
+  velocity: 64
+  start_time: 37.5
+  end_time: 38.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 57
+  velocity: 64
+  start_time: 38.0
+  end_time: 38.25
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 50
+  velocity: 64
+  start_time: 38.25
+  end_time: 38.5
+  numerator: 1
+  denominator: 8
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 47
+  velocity: 64
+  start_time: 38.5
+  end_time: 39.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 48
+  velocity: 64
+  start_time: 39.0
+  end_time: 39.5
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+notes {
+  pitch: 41
+  velocity: 64
+  start_time: 39.5
+  end_time: 40.0
+  numerator: 1
+  denominator: 4
+  instrument: 4
+  program: 1
+  part: 4
+  voice: 1
+}
+total_time: 40.0
+part_infos {
+  name: "Horn 2"
+}
+part_infos {
+  part: 1
+  name: "Soprano"
+}
+part_infos {
+  part: 2
+  name: "Alto"
+}
+part_infos {
+  part: 3
+  name: "Tenor"
+}
+part_infos {
+  part: 4
+  name: "Bass"
+}
+source_info {
+  source_type: SCORE_BASED
+  encoding_type: MUSIC_XML
+  parser: MAGENTA_MUSIC_XML
+}

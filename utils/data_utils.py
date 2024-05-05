@@ -188,6 +188,9 @@ def get_tf_record_dataset(file_pattern=None,
   shape_len = len(shape)
   decode_fn = lambda x: _decode_record(x, flattened_shape, shape_len, tokens)
   dataset = dataset.map(decode_fn, num_parallel_calls=AUTOTUNE)
+  # for element in dataset.take(1):
+    # print("dataset element inputs:",element['inputs'])
+    # inputs is a tensor shape equals to FLAGs.data_shape
   return dataset
 
 

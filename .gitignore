@@ -18,3 +18,4 @@ checkpoints/
 vae_output/
 datans/
 fluid/
+datasets/

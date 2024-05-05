@@ -35,17 +35,17 @@ import utils.data_utils as data_utils
 FLAGS = flags.FLAGS
 
 flags.DEFINE_boolean('toy_data', False, 'Create a toy dataset.')
-flags.DEFINE_string('encoded_data', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/minibach_encoded',
+flags.DEFINE_string('encoded_data', '~/data/encoded_lmd',
                     'Path to encoded data TFRecord directory.')
-flags.DEFINE_string('output_path', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/ncsn_input_tfrecords', 'Output directory.')
+flags.DEFINE_string('output_path', './output/transform/', 'Output directory.')
 flags.DEFINE_integer('shard_size', 2**17, 'Number of vectors per shard.')
 flags.DEFINE_enum('output_format', 'tfrecord', ['tfrecord', 'pkl'],
                   'Shard file type.')
 
-flags.DEFINE_enum('mode', 'sequences', ['flatten', 'sequences', 'decoded'],
+flags.DEFINE_enum('mode', 'flatten', ['flatten', 'sequences', 'decoded'],
                   'Transformation mode.')
 flags.DEFINE_boolean('remove_zeros', True, 'Remove zero vectors.')
-flags.DEFINE_integer('context_length', 1,
+flags.DEFINE_integer('context_length', 4,
                      'The length of the context window in a sequence.')
 flags.DEFINE_integer('stride', 1, 'The stride used for generating sequences.')
 flags.DEFINE_integer('max_songs', None,
@@ -83,12 +83,11 @@ def _serialize(writer, input_tensor, target_tensor=None):
   features = {'inputs': features, 'input_shape': _int_feature(input_shape)}
 
   if target_tensor is not None:
-    print("target is not none")
     target_shape = target_tensor.shape
     targets = target_tensor.reshape(prod(target_shape),)
     features['targets'] = _float_feature(targets)
     features['target_shape'] = _int_feature(target_shape)
-  #print("feature map:",features)
+
   tf_example = tf.train.Example(features=tf.train.Features(feature=features))
   writer.write(tf_example.SerializeToString())
 
@@ -121,7 +120,7 @@ def save_shard(contexts, targets, output_path):
 
     contexts = contexts[FLAGS.shard_size:]
     targets = targets[FLAGS.shard_size:]
-    
+
   output_path += '.' + FLAGS.output_format
 
   # Serialize shard
@@ -160,45 +159,31 @@ def toy_sequence_distribution_fn(trajectory_length=10, batch_size=512):
 
 def main(argv):
   del argv  # unused
-  print("enc path",FLAGS.encoded_data)
+
   if FLAGS.mode == 'decoded':
     train_glob = f'{FLAGS.encoded_data}/decoded-train.tfrecord-*'
     eval_glob = f'{FLAGS.encoded_data}/decoded-eval.tfrecord-*'
   else:
-    trainx_glob = f'{FLAGS.encoded_data}/t*'
-    evalx_glob = f'{FLAGS.encoded_data}/e*'
-    trainy_glob = f'{FLAGS.encoded_data}/t*'
-    evaly_glob = f'{FLAGS.encoded_data}/e*'
-  print(os.path.expanduser(trainx_glob))
-  trainx_files = glob.glob(os.path.expanduser(trainx_glob))
-  evalx_files = glob.glob(os.path.expanduser(evalx_glob))
-  trainy_files = glob.glob(os.path.expanduser(trainy_glob))
-  evaly_files = glob.glob(os.path.expanduser(evaly_glob))
-  print("trainfile len",len(trainx_files))
+    train_glob = f'{FLAGS.encoded_data}/training_seqs.tfrecord-*'
+    eval_glob = f'{FLAGS.encoded_data}/eval_seqs.tfrecord-*'
+
+  train_files = glob.glob(os.path.expanduser(train_glob))
+  eval_files = glob.glob(os.path.expanduser(eval_glob))
 
   tensor_shape = [tf.float64]
-  trainx_dataset = tf.data.TFRecordDataset(
-      trainx_files).map(lambda x: tf.py_function(
+  train_dataset = tf.data.TFRecordDataset(
+      train_files).map(lambda x: tf.py_function(
           lambda binary: pickle.loads(binary.numpy()), [x], tensor_shape),
                        num_parallel_calls=tf.data.experimental.AUTOTUNE)
-  evalx_dataset = tf.data.TFRecordDataset(
-      evalx_files).map(lambda x: tf.py_function(
-          lambda binary: pickle.loads(binary.numpy()), [x], tensor_shape),
-                      num_parallel_calls=tf.data.experimental.AUTOTUNE)
-  trainy_dataset = tf.data.TFRecordDataset(
-      trainy_files).map(lambda x: tf.py_function(
-          lambda binary: pickle.loads(binary.numpy()), [x], tensor_shape),
-                       num_parallel_calls=tf.data.experimental.AUTOTUNE)
-  evaly_dataset = tf.data.TFRecordDataset(
-      evaly_files).map(lambda x: tf.py_function(
+  eval_dataset = tf.data.TFRecordDataset(
+      eval_files).map(lambda x: tf.py_function(
           lambda binary: pickle.loads(binary.numpy()), [x], tensor_shape),
                       num_parallel_calls=tf.data.experimental.AUTOTUNE)
 
   ctx_window = FLAGS.context_length
   stride = FLAGS.stride
 
-  for ds, split in [(trainx_dataset, 'trainx'), (evalx_dataset, 'evalx'), 
-                    (trainy_dataset, 'trainy'), (evaly_dataset, 'evaly')]:
+  for ds, split in [(train_dataset, 'train'), (eval_dataset, 'eval')]:
     if FLAGS.max_songs is not None:
       ds = ds.take(FLAGS.max_songs)
 
@@ -215,7 +200,6 @@ def main(argv):
 
         # Use the full VAE embedding
         song = song_embeddings[0]
-        #print("song shape:",song.shape)
 
       else:
         song = song_data[0]
@@ -247,7 +231,6 @@ def main(argv):
           targets.append(vec)
       elif FLAGS.mode == 'sequences':
         for i in range(0, len(song) - ctx_window, stride):
-          logging.info(f'len(song) is {len(song)}, i is {i}.')
           context = song[i:i + ctx_window]
           if FLAGS.remove_zeros and np.where(
               np.linalg.norm(context, axis=1) < 1e-6)[0].any():
@@ -258,7 +241,6 @@ def main(argv):
           example_count += 1
           contexts.append(context)
           targets.append(song[i + ctx_window])
-        #print("context list length:", len(contexts))
 
       if len(targets) >= FLAGS.shard_size:
         contexts, targets = save_shard(
@@ -270,7 +252,6 @@ def main(argv):
         break
 
     logging.info(f'Discarded {discard} invalid sequences.')
-    logging.info(f'len(targets) is {len(targets)}.')
     if len(targets) > 0:
       save_shard(contexts, targets,
                  output_fp.format(FLAGS.output_path, split, count))

@@ -52,7 +52,7 @@ def count_measures(note_sequence):
   return bars
 
 
-def extract_melodies(note_sequence, keep_longest_split=False):
+def extract_melodies(note_sequence, keep_longest_split=True):
   """Extracts all melodies in a polyphonic note sequence.
   
   Args:
@@ -71,12 +71,11 @@ def extract_melodies(note_sequence, keep_longest_split=False):
     splits = [ns]
 
   melodies = []
+  
   for split_ns in splits:
-    qs = note_seq.sequences_lib.quantize_note_sequence(split_ns,
-                                                       steps_per_quarter=4)
-
-    instruments = list(set([note.instrument for note in qs.notes]))
-
+    # qs = note_seq.sequences_lib.quantize_note_sequence(split_ns, steps_per_quarter=4)
+    qs = split_ns
+    """instruments = list(set([note.instrument for note in qs.notes]))
     for instrument in instruments:
       melody = note_seq.melodies_lib.Melody()
       try:
@@ -87,8 +86,26 @@ def extract_melodies(note_sequence, keep_longest_split=False):
       except note_seq.NonIntegerStepsPerBarError:
         continue
       melody_ns = melody.to_sequence()
-      melodies.append(melody_ns)
-
+      melodies.append(melody_ns)"""
+    parts = list(set(part_info.part for part_info in qs.part_infos))
+    for part in parts:
+      part_sequence = note_seq.music_pb2.NoteSequence()
+      part_sequence.CopyFrom(qs)
+      for note in part_sequence.notes:
+        if note.part != part:
+            part_sequence.notes.remove(note)
+      for part_info in qs.part_infos:
+        if part_info.part != part:
+          part_sequence.part_infos.remove(part_info)
+      """for note in qs.notes:
+        if note.part == part:
+          part_sequence.notes.add(note)
+      for part_info in qs.part_infos:
+        if part_info.part == part:
+          part_sequence.part_infos.add(part_info)
+      part_sequence.total_time = qs.total_time"""
+      print("Total time: {}".format(part_sequence.total_time))
+      melodies.append(part_sequence)
   return melodies
 
 

@@ -125,7 +125,7 @@ class DenseDDPM(nn.Module):
   def apply(self, inputs, t, num_layers=3, mlp_dims=2048):
     # inputs.shape = (batch_size, z_dims)
     # t.shape = (batch_size, 1)
-    x = inputs
+    x, y = inputs
     x = nn.Dense(x, mlp_dims)
     for _ in range(num_layers):
       scale, shift = DenseFiLM(t, 128, mlp_dims)
@@ -145,20 +145,23 @@ class TransformerDDPM(nn.Module):
             num_heads=8,
             num_mlp_layers=2,
             mlp_dims=2048):
-    batch_size, seq_len, data_channels = inputs.shape
-
-    x = inputs
+    # print("input: {}.".format(inputs))
+    batch_size, seq_len, data_channels = inputs[0].shape
+    x, y = inputs # inputs: tuple (x, y)
     embed_channels = 128
     temb = TransformerPositionalEncoding(jnp.arange(seq_len), embed_channels)
     temb = temb[None, :, :]
     assert temb.shape[1:] == (seq_len, embed_channels), temb.shape
     x = nn.Dense(x, embed_channels)
+    y = nn.Dense(y, embed_channels)
 
     x = x + temb
+    y = y + temb
     for _ in range(num_layers):
       shortcut = x
       x = nn.LayerNorm(x)
-      x = nn.SelfAttention(x, num_heads=num_heads)
+      # x = nn.SelfAttention(x, num_heads=num_heads)
+      x = nn.MultiHeadDotProductAttention(inputs_q = x, inputs_kv = y, num_heads = num_heads)
       x = x + shortcut
       shortcut2 = x
       x = nn.LayerNorm(x)

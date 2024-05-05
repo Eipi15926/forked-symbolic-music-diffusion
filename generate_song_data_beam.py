@@ -36,14 +36,15 @@ flags.DEFINE_string(
 
 # Model
 flags.DEFINE_string('model', 'melody-2-big', 'Model configuration.')
-flags.DEFINE_string('checkpoint', 'fb512_0trackmin/model.ckpt-99967',
+flags.DEFINE_string('checkpoint', '/home/iid/wxy/symbolic-music-diffusion/checkpoints/musicvae_ckpt/cat-mel_2bar_big.tar',
                     'Model checkpoint.')
 
 # Data transformation
 flags.DEFINE_enum('mode', 'melody', ['melody', 'multitrack'],
                   'Data generation mode.')
-flags.DEFINE_string('input', None, 'Path to tfrecord files.')
-flags.DEFINE_string('output', None, 'Output path.')
+flags.DEFINE_string('part', 'x', 'Music part name in a song.')
+flags.DEFINE_string('input', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/minibachns.tfrecord', 'Path to tfrecord files.')
+flags.DEFINE_string('output', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/minibach_encoded/x_encoded_tfrecords', 'Output path.')
 
 
 class EncodeSong(beam.DoFn):
@@ -68,6 +69,7 @@ class EncodeSong(beam.DoFn):
     if FLAGS.mode == 'melody':
       chunk_length = 2
       melodies = song_utils.extract_melodies(ns)
+      print("melody part cnt:",len(melodies))
       if not melodies:
         Metrics.counter('EncodeSong', 'extracted_no_melodies').inc()
         return
@@ -91,9 +93,18 @@ class EncodeSong(beam.DoFn):
       assert matrix.shape[0] == 3 and matrix.shape[-1] == 512
       if matrix.shape[1] == 0:
         Metrics.counter('EncodeSong', 'skipped_matrix').inc()
+        print("matrix skipped")
         continue
       Metrics.counter('EncodeSong', 'encoded_matrix').inc()
-      yield pickle.dumps(matrix)
+      print("matrix shape:",matrix.shape)
+    matrix_x = encoding_matrices[0]
+    matrix_y = encoding_matrices[1]
+    if FLAGS.part == 'x':
+      if matrix_x.shape[1] == matrix_y.shape[1]:
+        yield pickle.dumps(matrix_x)
+    else:
+      if matrix_x.shape[1] == matrix_y.shape[1]:
+        yield pickle.dumps(matrix_y)
 
 
 def main(argv):

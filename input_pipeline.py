@@ -109,8 +109,15 @@ def inverse_data_transform(batch,
 
   return batch
 
+def my_data_debugger(train_ds):
+  #for data in train_ds.take(3):
+  #  print("data produced shape:", data)
+  # print("example test",train_ds.take(1).examples)
+  print("ext",tfds.as_numpy(train_ds),train_ds.examples)
+  return
 
-def get_dataset(dataset='',
+
+def get_part_dataset(type = 'x', dataset='',
                 data_shape=(2,),
                 problem='vae',
                 batch_size=128,
@@ -125,18 +132,33 @@ def get_dataset(dataset='',
   elif problem in ['vae', 'toy', 'tokens']:
     shape = tuple(map(int, data_shape))
     tokens = problem == 'tokens'
-    train_ds = data_utils.get_tf_record_dataset(
-        file_pattern=f'{dataset}/train-*.tfrecord',
-        shape=shape,
-        batch_size=batch_size,
-        shuffle=True,
-        tokens=tokens)
-    eval_ds = data_utils.get_tf_record_dataset(
-        file_pattern=f'{dataset}/eval-*.tfrecord',
-        shape=shape,
-        batch_size=batch_size,
-        shuffle=True,
-        tokens=tokens)
+    if type == 'x':
+      train_ds = data_utils.get_tf_record_dataset(
+          file_pattern=f'{dataset}/trainx*',
+          shape=shape,
+          batch_size=batch_size,
+          shuffle=False,
+          tokens=tokens)
+      eval_ds = data_utils.get_tf_record_dataset(
+          file_pattern=f'{dataset}/evalx*',
+          shape=shape,
+          batch_size=batch_size,
+          shuffle=False,
+          tokens=tokens)
+    else:
+      train_ds = data_utils.get_tf_record_dataset(
+          file_pattern=f'{dataset}/trainy*',
+          shape=shape,
+          batch_size=batch_size,
+          shuffle=False,
+          tokens=tokens)
+      eval_ds = data_utils.get_tf_record_dataset(
+          file_pattern=f'{dataset}/evaly*',
+          shape=shape,
+          batch_size=batch_size,
+          shuffle=False,
+          tokens=tokens)
+    
   else:
     raise ValueError(f'Unknown problem type: {problem}')
 
@@ -155,6 +177,7 @@ def get_dataset(dataset='',
                           num_parallel_calls=AUTOTUNE)
   eval_ds = eval_ds.map(partial(deconstruct_dict, problem=problem),
                         num_parallel_calls=AUTOTUNE)
+  # my_data_debugger(train_ds) # 64,32,512
 
   # PCA transform
   if problem != 'tokens':
@@ -205,10 +228,12 @@ def get_dataset(dataset='',
     eval_ds = eval_ds.map(lambda example: normalize_dataset(
         example, eval_min, eval_max),
                           num_parallel_calls=AUTOTUNE)
+  # print("input pipline 243") # 64,32,42, drop unnessary features
+  # my_data_debugger(train_ds)
 
-  train_ds = train_ds.prefetch(AUTOTUNE)
-  eval_ds = eval_ds.prefetch(AUTOTUNE)
-  eval_ds = eval_ds.cache()
+  # train_ds = train_ds.prefetch(AUTOTUNE)
+  # eval_ds = eval_ds.prefetch(AUTOTUNE)
+  # eval_ds = eval_ds.cache()
 
   setattr(train_ds, 'min', train_min)
   setattr(train_ds, 'max', train_max)
@@ -231,5 +256,50 @@ def get_dataset(dataset='',
         cache_dir=os.path.expanduser(dataset),
         config=config_name)
     logging.info('Computed dataset cardinality in %f seconds', time.time() - t0)
+  
+  return train_ds, eval_ds
 
+
+def get_dataset(dataset='',
+                data_shape=(2,),
+                problem='vae',
+                batch_size=128,
+                normalize=True,
+                pca_ckpt='',
+                slice_ckpt='',
+                dim_weights_ckpt='',
+                include_cardinality=True):
+  trainx_ds,evalx_ds = get_part_dataset('x',dataset,data_shape,problem,batch_size,normalize,pca_ckpt,slice_ckpt,dim_weights_ckpt,include_cardinality)
+  trainy_ds,evaly_ds = get_part_dataset('y',dataset,data_shape,problem,batch_size,normalize,pca_ckpt,slice_ckpt,dim_weights_ckpt,include_cardinality)
+  # my_data_debugger(trainx_ds)
+  train_ds = tf.data.Dataset.zip((trainx_ds,trainy_ds))
+  eval_ds = tf.data.Dataset.zip((evalx_ds,evaly_ds))
+
+  train_ds = train_ds.prefetch(AUTOTUNE)
+  eval_ds = eval_ds.prefetch(AUTOTUNE)
+  eval_ds = eval_ds.cache()
+
+# TODO: check the min and max in sample_ncsn
+  setattr(train_ds, 'min', trainx_ds.min)
+  setattr(train_ds, 'max', trainx_ds.max)
+  setattr(eval_ds, 'min', evaly_ds.min)
+  setattr(eval_ds, 'max', evaly_ds.max)
+
+  if include_cardinality:
+    t0 = time.time()
+    config_name = str(batch_size)
+    data_utils.compute_dataset_cardinality(
+        train_ds,
+        ds_split='train',
+        cache=True,
+        cache_dir=os.path.expanduser(dataset),
+        config=config_name)
+    data_utils.compute_dataset_cardinality(
+        eval_ds,
+        ds_split='eval',
+        cache=True,
+        cache_dir=os.path.expanduser(dataset),
+        config=config_name)
+    logging.info('Computed dataset cardinality in %f seconds', time.time() - t0)
+  
   return train_ds, eval_ds

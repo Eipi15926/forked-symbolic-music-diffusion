@@ -310,7 +310,7 @@ def diffusion_decoder(z_list, rng_seed=1):
   return gen, collects, sampling_metrics
 
 
-def generate_samples(sample_shape, num_samples, rng_seed=1):
+def generate_samples(sample_shape, num_samples, ylabel, rng_seed=1):
   """Generate samples using pre-trained score network.
 
   Args:
@@ -320,7 +320,7 @@ def generate_samples(sample_shape, num_samples, rng_seed=1):
   """
   rng = jax.random.PRNGKey(rng_seed)
   rng, model_rng = jax.random.split(rng)
-
+  print("---model creation begins---")
   # Create a model with dummy parameters and a dummy optimizer
   model_kwargs = {
       'num_layers': FLAGS.num_layers,
@@ -331,7 +331,7 @@ def generate_samples(sample_shape, num_samples, rng_seed=1):
   model = train_ncsn.create_model(model_rng,
                                   sample_shape,
                                   model_kwargs,
-                                  batch_size=1,
+                                  batch_size=num_samples,
                                   verbose=True)
   optimizer = train_ncsn.create_optimizer(model, 0)
   ema = train_utils.EMAHelper(mu=0, params=model.params)
@@ -350,9 +350,10 @@ def generate_samples(sample_shape, num_samples, rng_seed=1):
   rng, sample_rng = jax.random.split(rng)
 
   t0 = time.time()
-  generated, collection, ld_metrics = train_ncsn.sample(
+  generated, collection, ld_metrics = train_ncsn.conditional_sample(
       optimizer.target,
       sigmas,
+      ylabel,# to be added
       sample_rng,
       sample_shape,
       num_samples=num_samples,
@@ -398,8 +399,17 @@ def main(argv):
   eval_ds = eval_ds.unbatch()
   if FLAGS.sample_size is not None:
     eval_ds = eval_ds.take(FLAGS.sample_size)
-  real = np.stack([ex for ex in tfds.as_numpy(eval_ds)])
+  xlabel_list = []
+  ylabel_list = []
+  for idx, data in enumerate(tfds.as_numpy(eval_ds)):
+    # print("data: {}, data[0]: {}, data[1]: {}.".format(data,data[0],data[1]))
+    xlabel_list.append(data[0])
+    ylabel_list.append(data[1])
+  real = np.stack(ylabel_list)
   shape = real[0].shape
+  # print("ylabel shape: {}, real[0].shape: {}, len(real): {}".format(ylabel.shape, real[0].shape, len(real)))
+  # real = np.stack([ex for ex in tfds.as_numpy(eval_ds)])
+  # shape = real[0].shape
 
   # Generation.
   if FLAGS.infill:  # Infilling.
@@ -436,7 +446,7 @@ def main(argv):
 
   else:  # Unconditional generation.
     generated, collection, ld_metrics = generate_samples(
-        shape, len(real), rng_seed=FLAGS.sample_seed)
+        shape, len(real), real, rng_seed=FLAGS.sample_seed)
 
   # Animation (for 2D samples).
   if FLAGS.animate and shape[-1] == 2:

@@ -37,6 +37,7 @@ from flax.training import lr_schedule
 
 import input_pipeline
 import utils.ebm_utils as ebm_utils
+import utils.multi_utils as multi_utils
 import utils.plot_utils as plot_utils
 import utils.train_utils as train_utils
 from utils.losses import denoising_score_matching_loss, sliced_score_matching_loss, diffusion_loss
@@ -105,7 +106,7 @@ flags.DEFINE_list('data_shape', [
 flags.DEFINE_enum('problem', 'toy', ['toy', 'mnist', 'vae'],
                   'Problem to solve.')
 flags.DEFINE_string(
-    'dataset', './output/mix2d',
+    'dataset', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/minilahk/minilahk_ncsn',
     'Path to directory containing data as train/eval tfrecord files.')
 flags.DEFINE_string('pca_ckpt', '', 'PCA transform.')
 flags.DEFINE_string('slice_ckpt', '', 'Slice transform.')
@@ -123,7 +124,7 @@ flags.DEFINE_integer('checkpoints_to_keep', 50,
                      'Number of checkpoints to keep.')
 flags.DEFINE_boolean('save_ckpt', True,
                      'Save model checkpoints at each evaluation step.')
-flags.DEFINE_string('model_dir', './save/ncsn',
+flags.DEFINE_string('model_dir', './save/multipart/ncsn',
                     'Directory to store model data.')
 flags.DEFINE_boolean('verbose', True, 'Toggle logging to stdout.')
 
@@ -193,9 +194,16 @@ def create_optimizer(model, learning_rate):
 def create_model(rng, input_shape, model_kwargs, batch_size=32, verbose=False):
   clazz = getattr(ncsn, FLAGS.architecture)
   module = clazz.partial(**model_kwargs)
+  print("input shape in create_model",(batch_size, *input_shape))
+  """
   output, initial_params = module.init_by_shape(
       rng, [((batch_size, *input_shape), jnp.float32),
             ((batch_size, *([1] * len(input_shape))), jnp.float32)])
+  """
+  #TODO: check the difference between module.init and module.init_by_shape
+  inpx = jnp.empty((batch_size, *input_shape),jnp.float32)
+  output, initial_params = module.init(rng, (inpx,inpx), jnp.empty((batch_size, *([1] * len(input_shape))),jnp.float32))
+  # print(initial_params) #which gives a series of network params
   model = nn.Model(module, initial_params)
 
   if verbose:
@@ -245,10 +253,11 @@ def evaluate(dataset, model, sigmas, rng):
   count = 0
   total_loss = 0.
 
-  for inputs in tfds.as_numpy(dataset):
+  for inputxy in tfds.as_numpy(dataset):
+    inputs = inputxy[0]
     count += inputs.shape[0]
     rng, eval_rng = jax.random.split(rng)
-    loss = eval_step(objective, inputs, model, sigmas, eval_rng)
+    loss = eval_step(objective, inputxy, model, sigmas, eval_rng)
     total_loss += loss.item()
 
   loss = total_loss / count
@@ -313,6 +322,7 @@ def train(train_batches, valid_batches, sigmas, output_dir=None, verbose=True):
 
   tfds_batch = valid_batches.take(1)
   tfds_batch = list(valid_batches.as_numpy_iterator())[0]
+  tfds_batch = tfds_batch[0]
   batch_size, *input_shape = tfds_batch.shape
 
   rng = jax.random.PRNGKey(FLAGS.seed)
@@ -357,6 +367,8 @@ def train(train_batches, valid_batches, sigmas, output_dir=None, verbose=True):
     for step, batch in enumerate(tfds.as_numpy(train_batches)):
       rng, train_rng = jax.random.split(rng)
       global_step = step + epoch * train_batches.examples
+      # tbex = 10
+      # global_step = step + epoch * tbex
       optimizer, train_metrics = train_step(objective, batch, optimizer,
                                             sigmas, train_rng,
                                             lr_scheduler(global_step))
@@ -551,6 +563,75 @@ def sample(scorenet,
   return generated, collection, ld_metrics
 
 
+def conditional_sample(scorenet,
+           sigmas,
+           ylabel,
+           rng,
+           sample_shape,
+           num_samples=2400,
+           sampling='ald',
+           epsilon=1e-3,
+           steps=100,
+           denoise=True):
+  """Generate samples via Langevin dynamics.
+  Args:
+    scorenet: Score model to use for sampling.
+    sigmas: Noise schedule.
+    ylabel: Conditional symbolic music sequences.
+    rng: Random number generator for noise.
+    sample_shape: Shape of each individual sample.
+    num_samples: The number of samples to generate.
+    sampling: Sampling algorithm to use.
+    epsilon: Step size for Langevin dynamics.
+    steps: Number of sampling steps.
+    denoise: Apply an additional denoising step to yield
+        the expected denoised sampled (EDS).
+  Returns:
+    generated: An array of generated samples.
+    collection: An array with the samples at each step of sampling.
+    ld_metrics: Sampling statistics for each step.
+  """
+  if sampling == 'ddpm':
+    sampling_algorithm = multi_utils.diffusion_dynamics
+  else:
+    raise ValueError(f'Unknown sampling algorithm: {sampling}')
+
+  init_rng, ld_rng = jax.random.split(rng)
+
+  # Initial state has mean=0, var=1.
+  if sampling == 'ddpm':
+    init = jax.random.normal(key=init_rng, shape=(num_samples, *sample_shape))
+  else:
+    rho = jnp.sqrt(12) / 2
+    init = jax.random.uniform(key=init_rng,
+                              shape=(num_samples, *sample_shape),
+                              minval=-rho,
+                              maxval=rho)
+
+  generated, collection, ld_metrics = sampling_algorithm(
+      ld_rng, scorenet, sigmas, (init, ylabel), epsilon, steps, denoise, False)
+  ld_metrics = ebm_utils.collate_sampling_metrics(ld_metrics)
+  return generated, collection, ld_metrics
+
+# the following two functions are for debug needs, no relation with model training
+def my_debugger(dataset):
+  print(dataset.examples)
+  for step, batch in enumerate(tfds.as_numpy(dataset.take(1))):
+    print("step: {}, batch: {}".format(step,batch))
+  for element in dataset.take(1):
+    print("dataset element:",element)
+  return
+
+
+def test_zip(ds1,ds2):
+  ds = tf.data.Dataset.zip((ds1,ds2))
+  #for step, batch in enumerate(tfds.as_numpy(ds)):
+    #print("step: {}, batch: {}, batchx: {}, batchy: {}".format(step,len(batch),batch[0],batch[1]))
+  for element in ds.take(1):
+    print("zipped element:",element)
+  return
+
+
 def main(argv):
   del argv  # unused
 
@@ -569,7 +650,8 @@ def main(argv):
       pca_ckpt=FLAGS.pca_ckpt,
       slice_ckpt=FLAGS.slice_ckpt,
       dim_weights_ckpt=FLAGS.dim_weights_ckpt)
-
+  # my_debugger(train_ds)
+  # test_zip(train_ds, eval_ds)
   # Noise schedule
   noise_schedule = ebm_utils.create_noise_schedule(FLAGS.sigma_begin,
                                                    FLAGS.sigma_end,
