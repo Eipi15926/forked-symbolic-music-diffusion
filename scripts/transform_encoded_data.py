@@ -35,9 +35,9 @@ import utils.data_utils as data_utils
 FLAGS = flags.FLAGS
 
 flags.DEFINE_boolean('toy_data', False, 'Create a toy dataset.')
-flags.DEFINE_string('encoded_data', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/minibach_encoded',
+flags.DEFINE_string('encoded_data', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/bcdf/encoded',
                     'Path to encoded data TFRecord directory.')
-flags.DEFINE_string('output_path', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/ncsn_input_tfrecords', 'Output directory.')
+flags.DEFINE_string('output_path', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/bcdf/ncsn_input', 'Output directory.')
 flags.DEFINE_integer('shard_size', 2**17, 'Number of vectors per shard.')
 flags.DEFINE_enum('output_format', 'tfrecord', ['tfrecord', 'pkl'],
                   'Shard file type.')
@@ -45,7 +45,7 @@ flags.DEFINE_enum('output_format', 'tfrecord', ['tfrecord', 'pkl'],
 flags.DEFINE_enum('mode', 'sequences', ['flatten', 'sequences', 'decoded'],
                   'Transformation mode.')
 flags.DEFINE_boolean('remove_zeros', True, 'Remove zero vectors.')
-flags.DEFINE_integer('context_length', 1,
+flags.DEFINE_integer('context_length', 32,
                      'The length of the context window in a sequence.')
 flags.DEFINE_integer('stride', 1, 'The stride used for generating sequences.')
 flags.DEFINE_integer('max_songs', None,
@@ -165,10 +165,10 @@ def main(argv):
     train_glob = f'{FLAGS.encoded_data}/decoded-train.tfrecord-*'
     eval_glob = f'{FLAGS.encoded_data}/decoded-eval.tfrecord-*'
   else:
-    trainx_glob = f'{FLAGS.encoded_data}/t*'
-    evalx_glob = f'{FLAGS.encoded_data}/e*'
-    trainy_glob = f'{FLAGS.encoded_data}/t*'
-    evaly_glob = f'{FLAGS.encoded_data}/e*'
+    trainx_glob = f'{FLAGS.encoded_data}/*'
+    evalx_glob = f'{FLAGS.encoded_data}/*'
+    trainy_glob = f'{FLAGS.encoded_data}/*'
+    evaly_glob = f'{FLAGS.encoded_data}/*'
   print(os.path.expanduser(trainx_glob))
   trainx_files = glob.glob(os.path.expanduser(trainx_glob))
   evalx_files = glob.glob(os.path.expanduser(evalx_glob))

@@ -42,9 +42,9 @@ flags.DEFINE_string('checkpoint', '/home/iid/wxy/symbolic-music-diffusion/checkp
 # Data transformation
 flags.DEFINE_enum('mode', 'melody', ['melody', 'multitrack'],
                   'Data generation mode.')
-flags.DEFINE_string('part', 'y', 'Music part name in a song.')
-flags.DEFINE_string('input', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/minibachns.tfrecord', 'Path to tfrecord files.')
-flags.DEFINE_string('output', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/minibach_encoded/x_encoded_tfrecords', 'Output path.')
+flags.DEFINE_string('part', '1', 'Music part name in a song.')
+flags.DEFINE_string('input', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/bcdf/bachns.tfrecord', 'Path to tfrecord files.')
+flags.DEFINE_string('output', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/bcdf/bach_encoded/x_encoded_tfrecords', 'Output path.')
 
 
 class EncodeSong(beam.DoFn):
@@ -68,10 +68,9 @@ class EncodeSong(beam.DoFn):
 
     if FLAGS.mode == 'melody':
       chunk_length = 2
-      melodies = song_utils.extract_melodies(ns)
-      print("melody part cnt:",len(melodies))
-      if len(melodies) < 2:
-        return
+      #melodies = song_utils.extract_melodies(ns)
+      melodies = myns_utils.extract_melodies(ns,keep_longest_split=False, mode='bcd',part=int(FLAGS.part))
+      print("part is {}.\n".format(part))
       if not melodies:
         Metrics.counter('EncodeSong', 'extracted_no_melodies').inc()
         return
@@ -95,18 +94,9 @@ class EncodeSong(beam.DoFn):
       assert matrix.shape[0] == 3 and matrix.shape[-1] == 512
       if matrix.shape[1] == 0:
         Metrics.counter('EncodeSong', 'skipped_matrix').inc()
-        print("matrix skipped")
         continue
       Metrics.counter('EncodeSong', 'encoded_matrix').inc()
-      print("matrix shape:",matrix.shape)
-    matrix_x = encoding_matrices[0]
-    matrix_y = encoding_matrices[1]
-    if FLAGS.part == 'x':
-      if matrix_x.shape[1] == matrix_y.shape[1]:
-        yield pickle.dumps(matrix_x)
-    else:
-      if matrix_x.shape[1] == matrix_y.shape[1]:
-        yield pickle.dumps(matrix_y)
+      yield pickle.dumps(matrix)
 
 
 def main(argv):

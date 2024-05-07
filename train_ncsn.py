@@ -106,7 +106,7 @@ flags.DEFINE_list('data_shape', [
 flags.DEFINE_enum('problem', 'toy', ['toy', 'mnist', 'vae'],
                   'Problem to solve.')
 flags.DEFINE_string(
-    'dataset', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/minilahk/minilahk_ncsn',
+    'dataset', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/bcdf/ncsn_input',
     'Path to directory containing data as train/eval tfrecord files.')
 flags.DEFINE_string('pca_ckpt', '', 'PCA transform.')
 flags.DEFINE_string('slice_ckpt', '', 'Slice transform.')
@@ -124,7 +124,7 @@ flags.DEFINE_integer('checkpoints_to_keep', 50,
                      'Number of checkpoints to keep.')
 flags.DEFINE_boolean('save_ckpt', True,
                      'Save model checkpoints at each evaluation step.')
-flags.DEFINE_string('model_dir', './save/multipart/ncsn',
+flags.DEFINE_string('model_dir', './save/bcdf/ncsn',
                     'Directory to store model data.')
 flags.DEFINE_boolean('verbose', True, 'Toggle logging to stdout.')
 
