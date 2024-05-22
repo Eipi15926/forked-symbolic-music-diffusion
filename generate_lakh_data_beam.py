@@ -43,10 +43,25 @@ flags.DEFINE_string('checkpoint', '/home/iid/wxy/symbolic-music-diffusion/checkp
 # Data transformation
 flags.DEFINE_enum('mode', 'melody', ['melody', 'multitrack'],
                   'Data generation mode.')
-flags.DEFINE_string('part', '2', 'Music part name in a song.')
-flags.DEFINE_string('input', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/bcdf/bachns.tfrecord', 'Path to tfrecord files.')
-flags.DEFINE_string('output', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/bcdf/bach_encoded/x_encoded_tfrecords', 'Output path.')
+flags.DEFINE_enum('split_mode','pitch', ['part','inst','pitch'],
+                  'Music part split mode.')
+flags.DEFINE_enum('split_typename1', 'p2',['bach_soprano','bach_alto','piano','strings','melinst','bass','guitar','soprano','p1','p2'],
+                  'Music part to be extracted.')
+flags.DEFINE_enum('split_typename2', 'p1',['bach_soprano','bach_alto','piano','strings','melinst','bass','guitar','soprano','p1','p2'],
+                  'Music part to be extracted.')
+flags.DEFINE_string('input', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/lmd_clean/lmdc_eval.tfrecord', 'Path to tfrecord files.')
+flags.DEFINE_string('output', '/home/iid/wxy/forked-symbolic-music-diffusion/datasets/lmd_clean/encoded/eval_y_p2', 'Output path.')
 
+split_info_dict = {}
+split_info_dict['bach_soprano'] = [1]
+split_info_dict['bach_alto'] = [2]
+split_info_dict['piano'] = [0,1,2,3,4,5,6,7]
+split_info_dict['strings'] = [40,41,42,43,44,45,46,47]
+split_info_dict['melinst'] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+split_info_dict['bass'] = [32,33,34,35,36,37,38,39]
+split_info_dict['guitar'] = [24,25,26,27,28,29,30,31]
+split_info_dict['p1'] = range(-2,61)
+split_info_dict['p2'] = range(61,128)
 
 class EncodeSong(beam.DoFn):
   """Encode song into MusicVAE embeddings."""
@@ -70,8 +85,8 @@ class EncodeSong(beam.DoFn):
     if FLAGS.mode == 'melody':
       chunk_length = 2
       #melodies = song_utils.extract_melodies(ns)
-      melodies = myns_utils.extract_melodies(ns,keep_longest_split=False, mode='bcd',part=int(FLAGS.part))
-      print("part is {}.\n".format(FLAGS.part))
+      melodies = myns_utils.extract_melodies(ns,keep_longest_split=False, 
+                                             mode=FLAGS.split_mode, mode_related_info=split_info_dict[FLAGS.split_typename1])
       if not melodies:
         Metrics.counter('EncodeSong', 'extracted_no_melodies').inc()
         return
@@ -81,6 +96,18 @@ class EncodeSong(beam.DoFn):
                           chunk_length) for melody in melodies
       ]
       encoding_matrices = song_utils.encode_songs(self.model, songs)
+
+      melodies = myns_utils.extract_melodies(ns,keep_longest_split=False, 
+                                             mode=FLAGS.split_mode, mode_related_info=split_info_dict[FLAGS.split_typename2])
+      if not melodies:
+        Metrics.counter('EncodeSong', 'extracted_no_melodies').inc()
+        return
+      Metrics.counter('EncodeSong', 'extracted_melody').inc(len(melodies))
+      songs = [
+          song_utils.Song(melody, self.model_config.data_converter,
+                          chunk_length) for melody in melodies
+      ]
+      encoding_matrices2 = song_utils.encode_songs(self.model, songs)
     elif FLAGS.mode == 'multitrack':
       chunk_length = 1
       song = song_utils.Song(ns,
@@ -91,11 +118,14 @@ class EncodeSong(beam.DoFn):
     else:
       raise ValueError(f'Unsupported mode: {FLAGS.mode}')
 
-    for matrix in encoding_matrices:
+    for idx, matrix in enumerate(encoding_matrices):
       assert matrix.shape[0] == 3 and matrix.shape[-1] == 512
       if matrix.shape[1] == 0:
         Metrics.counter('EncodeSong', 'skipped_matrix').inc()
         continue
+      if matrix.shape != encoding_matrices2[idx].shape:
+        continue
+      logging.info('matrix shape: {}'.format(matrix.shape))
       Metrics.counter('EncodeSong', 'encoded_matrix').inc()
       yield pickle.dumps(matrix)
 

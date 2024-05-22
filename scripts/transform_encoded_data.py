@@ -44,7 +44,7 @@ flags.DEFINE_enum('output_format', 'tfrecord', ['tfrecord', 'pkl'],
 
 flags.DEFINE_enum('mode', 'sequences', ['flatten', 'sequences', 'decoded'],
                   'Transformation mode.')
-flags.DEFINE_boolean('remove_zeros', True, 'Remove zero vectors.')
+flags.DEFINE_boolean('remove_zeros', False, 'Remove zero vectors.')
 flags.DEFINE_integer('context_length', 32,
                      'The length of the context window in a sequence.')
 flags.DEFINE_integer('stride', 1, 'The stride used for generating sequences.')
@@ -83,7 +83,7 @@ def _serialize(writer, input_tensor, target_tensor=None):
   features = {'inputs': features, 'input_shape': _int_feature(input_shape)}
 
   if target_tensor is not None:
-    print("target is not none")
+    # print("target is not none")
     target_shape = target_tensor.shape
     targets = target_tensor.reshape(prod(target_shape),)
     features['targets'] = _float_feature(targets)
@@ -165,10 +165,10 @@ def main(argv):
     train_glob = f'{FLAGS.encoded_data}/decoded-train.tfrecord-*'
     eval_glob = f'{FLAGS.encoded_data}/decoded-eval.tfrecord-*'
   else:
-    trainx_glob = f'{FLAGS.encoded_data}/*'
-    evalx_glob = f'{FLAGS.encoded_data}/*'
-    trainy_glob = f'{FLAGS.encoded_data}/*'
-    evaly_glob = f'{FLAGS.encoded_data}/*'
+    trainx_glob = f'{FLAGS.encoded_data}/train_x_p*'
+    evalx_glob = f'{FLAGS.encoded_data}/eval_x_p*'
+    trainy_glob = f'{FLAGS.encoded_data}/train_y_p*'
+    evaly_glob = f'{FLAGS.encoded_data}/eval_y_p*'
   print(os.path.expanduser(trainx_glob))
   trainx_files = glob.glob(os.path.expanduser(trainx_glob))
   evalx_files = glob.glob(os.path.expanduser(evalx_glob))
@@ -207,15 +207,17 @@ def main(argv):
     count = 0
     discard = 0
     example_count, should_terminate = 0, False
+    dataset_size = 0
     for song_data in ds.as_numpy_iterator():
+      dataset_size += 1
       song_embeddings = song_data[0]
-
+      # logging.info("song embedding len: {}".format(len(song_embeddings)))
       if FLAGS.mode != 'decoded':
         assert song_embeddings.ndim == 3 and song_embeddings.shape[0] == 3
 
         # Use the full VAE embedding
         song = song_embeddings[0]
-        #print("song shape:",song.shape)
+        # print("song shape:",song.shape)
 
       else:
         song = song_data[0]
@@ -247,7 +249,7 @@ def main(argv):
           targets.append(vec)
       elif FLAGS.mode == 'sequences':
         for i in range(0, len(song) - ctx_window, stride):
-          logging.info(f'len(song) is {len(song)}, i is {i}.')
+          # logging.info(f'len(song) is {len(song)}, i is {i}.')
           context = song[i:i + ctx_window]
           if FLAGS.remove_zeros and np.where(
               np.linalg.norm(context, axis=1) < 1e-6)[0].any():
@@ -270,10 +272,11 @@ def main(argv):
         break
 
     logging.info(f'Discarded {discard} invalid sequences.')
-    logging.info(f'len(targets) is {len(targets)}.')
+    # logging.info(f'len(targets) is {len(targets)}.')
     if len(targets) > 0:
       save_shard(contexts, targets,
                  output_fp.format(FLAGS.output_path, split, count))
+    logging.info(f'Dataset name : {split}, dataset size: {dataset_size}.')
 
 
 if __name__ == '__main__':

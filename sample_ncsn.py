@@ -54,7 +54,7 @@ flags.DEFINE_string('sampling_dir', 'samples', 'Sampling directory.')
 flags.DEFINE_integer('sample_size', 1000, 'Number of samples.')
 
 # Metrics.
-flags.DEFINE_boolean('compute_metrics', False,
+flags.DEFINE_boolean('compute_metrics', True,
                      'Compute evaluation metrics for generated samples.')
 flags.DEFINE_boolean('compute_final_only', False,
                      'Do not include metrics for intermediate samples.')
@@ -66,7 +66,7 @@ flags.DEFINE_boolean('infill', False, 'Infill.')
 flags.DEFINE_boolean('interpolate', False, 'Interpolate.')
 
 
-def evaluate(writer, real, collection, baseline, valid_real):
+def evaluate(writer, real, primary_collection, baseline, valid_real, yreal):
   """Evaluation metrics.
 
   NOTE: It is important for collection and real to be normalized for 
@@ -79,11 +79,23 @@ def evaluate(writer, real, collection, baseline, valid_real):
         is of shape [sampling_steps, N, *data_shape].
     baseline: Generated samples from baseline.
     valid_real: Real samples from training distribution.
+    yreal: the real label of y
 
   Returns:
     A dict of evaluation metrics.
   """
-  assert collection.shape[1:] == real.shape
+  assert primary_collection.shape[1:] == real.shape
+
+  # normalization
+  pre_shape = primary_collection.shape
+  ucollection = primary_collection.reshape(pre_shape[0]*pre_shape[1],pre_shape[2],pre_shape[3])
+  min_val = np.min(ucollection,axis=(1, 2), keepdims=True)
+  max_val = np.max(ucollection,axis=(1, 2), keepdims=True)
+  mid_val = (min_val+max_val)/2
+  diff = max_val - min_val
+  diff[diff == 0] = 1
+  ncollection = 2 * (ucollection - mid_val) / diff
+  collection = ncollection.reshape(pre_shape)
 
   logging.info(
       f'Generated sample range: [{collection[-1].min()}, {collection[-1].max()}]'
@@ -94,7 +106,7 @@ def evaluate(writer, real, collection, baseline, valid_real):
     or real.min() < -1 or real.max() > 1.:
     warnings.warn(
         'Normalize test samples and generated samples to [-1, 1] range.')
-
+  print("collection shape: {}".format(collection.shape))
   gen_test_points = collection[np.linspace(0,
                                            len(collection) - 1,
                                            20).astype(np.uint32)]
@@ -111,23 +123,31 @@ def evaluate(writer, real, collection, baseline, valid_real):
     writer.image('init', im, step=0)
 
   init = collection[0]
+  """
   prd_init = metrics.precision_recall_distribution(real, init)
   prd_perfect = metrics.precision_recall_distribution(real, real)
 
   for model, test_points in [('baseline', [baseline]),
                              ('ncsn', gen_test_points),
                              ('random', random_points), ('real', real_points)]:
+  """
+  fr_dist_arr = {}
+  mmd_rbf_arr = {}
+  mmd_polynomial_arr = {}
+  for model, test_points in [('baseline', [baseline]), ('ncsn', gen_test_points), 
+                             ('random',random_points), ('real', [real]), ('yreal', [yreal])]:
     log_dir = f'{model}/'
     if any([point is None for point in test_points]):
       continue
-
+    print("Model name: {}, length of test point list: {}.".format(model, len(test_points)))
     for i, samples in enumerate(test_points):
+      print("model type: {}, sample shape in test_points: {}".format(model,samples.shape))
       # Render samples
       if samples.shape[-1] == 2:
         im_buf = plot_utils.scatter_2d(samples)
         im = tf.image.decode_png(im_buf.getvalue(), channels=4)
         writer.image(f'{log_dir}fake', im, step=i)
-
+      """
       # K-means histogram evaluation.
       prd_dist = metrics.precision_recall_distribution(real, samples)
       buf = io.BytesIO()
@@ -158,19 +178,49 @@ def evaluate(writer, real, collection, baseline, valid_real):
 
       ndb_over_k = metrics.ndb_score(real, samples, k=50)
       writer.scalar(f'{log_dir}ndb', ndb_over_k, step=i)
-
+      
+      """
       # Distance evaluation.
-      frechet_dist = metrics.frechet_distance(real, samples)
+      first_dim = real.shape[0]
+      reall = real.reshape(first_dim,-1)
+      sampless = samples.reshape(first_dim,-1)
+      yreall = yreal.reshape(first_dim,-1)
+      # print("array shape after reshape:{}, {}.".format(reall.shape, sampless.shape))
+      # print("array values:",reall,sampless)
+
+      frechet_dist = metrics.frechet_distance(reall, sampless)
       writer.scalar(f'{log_dir}frechet_distance', frechet_dist, step=i)
+      fr_dist_arr[i]=frechet_dist
 
-      mmd_rbf = metrics.mmd_rbf(real, samples)
+      mmd_rbf = metrics.mmd_rbf(reall, sampless)
       writer.scalar(f'{log_dir}mmd_rbf', mmd_rbf, step=i)
+      mmd_rbf_arr[i]=mmd_rbf
 
-      mmd_polynomial = metrics.mmd_polynomial(real, samples)
+      mmd_polynomial = metrics.mmd_polynomial(reall, sampless)
       writer.scalar(f'{log_dir}mmd_polynomial', mmd_polynomial, step=i)
+      mmd_polynomial_arr[i]=mmd_polynomial
 
+      frechet_dist_xy = metrics.frechet_distance(yreall, sampless)
+      writer.scalar(f'{log_dir}frechet_distance_xy', frechet_dist_xy, step=i)
+
+      mmd_rbf_xy = metrics.mmd_rbf(yreall, sampless)
+      writer.scalar(f'{log_dir}mmd_rbf_xy', mmd_rbf_xy, step=i)
+
+      mmd_polynomial_xy = metrics.mmd_polynomial(yreall, sampless)
+      writer.scalar(f'{log_dir}mmd_polynomial_xy', mmd_polynomial_xy, step=i)
+
+      frechet_dist_xyr = metrics.frechet_distance(yreall, reall)
+      writer.scalar(f'{log_dir}frechet_distance_xyr', frechet_dist_xyr, step=i)
+
+      mmd_rbf_xyr = metrics.mmd_rbf(yreall, reall)
+      writer.scalar(f'{log_dir}mmd_rbf_xyr', mmd_rbf_xyr, step=i)
+
+      mmd_polynomial_xyr = metrics.mmd_polynomial(yreall, reall)
+      writer.scalar(f'{log_dir}mmd_polynomial_xyr', mmd_polynomial_xyr, step=i)
+
+    print("Fre dist arr: {};\n Mmd_rbf arr: {};\n Mmd_polynomial arr: {}.\n".format(fr_dist_arr,mmd_rbf_arr,mmd_polynomial_arr))
   writer.flush()
-
+  """
   stats = {
       'precision': precision,
       'recall': recall,
@@ -183,6 +233,19 @@ def evaluate(writer, real, collection, baseline, valid_real):
       'mmd_rbf': mmd_rbf,
       'mmd_polynomial': mmd_polynomial
   }
+  """
+  stats = {
+      'frechet_dist': frechet_dist,
+      'mmd_rbf': mmd_rbf,
+      'mmd_polynomial': mmd_polynomial,
+      'frechet_dist_xy': frechet_dist_xy,
+      'mmd_rbf_xy': mmd_rbf_xy,
+      'mmd_polynomial_xy': mmd_polynomial_xy,
+      'frechet_dist_xyr': frechet_dist_xyr,
+      'mmd_rbf_xyr': mmd_rbf_xyr,
+      'mmd_polynomial_xyr': mmd_polynomial_xyr,
+  }
+  
   return stats
 
 
@@ -316,6 +379,7 @@ def generate_samples(sample_shape, num_samples, ylabel, rng_seed=1):
   Args:
     sample_shape: Shape of each sample.
     num_samples: Number of samples to generate.
+    ylabel: Conditional part.
     rng_seed: Random number generator for sampling.
   """
   rng = jax.random.PRNGKey(rng_seed)
@@ -402,11 +466,13 @@ def main(argv):
   xlabel_list = []
   ylabel_list = []
   for idx, data in enumerate(tfds.as_numpy(eval_ds)):
-    # print("data: {}, data[0]: {}, data[1]: {}.".format(data,data[0],data[1]))
+    # print("data: {}, data[0]: {}, data[1]: {}.".format(data,data[0].shape,data[1].shape))
     xlabel_list.append(data[0])
     ylabel_list.append(data[1])
-  real = np.stack(ylabel_list)
+  real = np.stack(xlabel_list)
+  yreal = np.stack(ylabel_list)
   shape = real[0].shape
+  # print("shape:",shape)# context len, latent vector dim
   # print("ylabel shape: {}, real[0].shape: {}, len(real): {}".format(ylabel.shape, real[0].shape, len(real)))
   # real = np.stack([ex for ex in tfds.as_numpy(eval_ds)])
   # shape = real[0].shape
@@ -446,7 +512,7 @@ def main(argv):
 
   else:  # Unconditional generation.
     generated, collection, ld_metrics = generate_samples(
-        shape, len(real), real, rng_seed=FLAGS.sample_seed)
+        shape, len(real), yreal, rng_seed=FLAGS.sample_seed)
 
   # Animation (for 2D samples).
   if FLAGS.animate and shape[-1] == 2:
@@ -457,6 +523,7 @@ def main(argv):
 
   # Dump generated to CPU.
   generated = np.array(generated)
+  print("generate shape:",generated.shape)
   collection = np.array(collection)
 
   # Write samples to disk (used for listening).
@@ -477,13 +544,18 @@ def main(argv):
     real_t = input_pipeline.inverse_data_transform(real, FLAGS.normalize, pca,
                                                    eval_min, eval_max,
                                                    slice_idx, dim_weights)
+    yreal_t = input_pipeline.inverse_data_transform(yreal, FLAGS.normalize, pca,
+                                                   eval_min, eval_max,
+                                                   slice_idx, dim_weights)
     data_utils.save(real_t, os.path.join(log_dir, 'ncsn/real.pkl'))
+    data_utils.save(yreal_t, os.path.join(log_dir, 'ncsn/yreal.pkl'))
     data_utils.save(generated_t, os.path.join(log_dir, 'ncsn/generated.pkl'))
 
   # Run evaluation metrics.
   if FLAGS.compute_metrics:
     train_ncsn.log_langevin_dynamics(ld_metrics, 0, log_dir)
-    metrics = evaluate(writer, real, collection, None, real)
+    print("real shape: {}.\n".format(real.shape))
+    metrics = evaluate(writer, real, collection, None, real, yreal)
     train_utils.log_metrics(metrics, 1, 1)
 
 

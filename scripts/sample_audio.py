@@ -56,6 +56,7 @@ flags.DEFINE_boolean('include_plots', True, 'Include Bokeh plots of MIDI.')
 flags.DEFINE_boolean('gen_only', False, 'Only generate the fake audio.')
 
 flags.DEFINE_boolean('melody', True, 'If True, decode melodies.')
+flags.DEFINE_boolean('trio', False, 'If True, decode latent vectors into 2-part(3-part) trios.')
 flags.DEFINE_boolean('infill', False, 'Evaluate quality of infilled measures.')
 flags.DEFINE_boolean('interpolate', False, 'Evaluate interpolations.')
 
@@ -98,7 +99,7 @@ def decode_emb(emb, model, data_converter, chunks_only=False):
       count += 1
       recon = song_utils.embeddings_to_song(emb_sample, model, data_converter)
       samples.append(recon)
-      print("sample_size:{}".format(len(samples)))
+      # print("sample_size:{}".format(len(samples)))
 
   return samples
 
@@ -135,6 +136,12 @@ def main(argv):
     vae_model = TrainedModel(model_config,
                              batch_size=1,
                              checkpoint_dir_or_path=ckpt)
+  elif FLAGS.trio:
+    model_config = config.MUSIC_VAE_CONFIG['trio-16-big'] # TODO: config file needs to be checked
+    ckpt = os.path.expanduser('/home/iid/wxy/symbolic-music-diffusion/checkpoints/trio_ckpt/filename')
+    vae_model = TrainedModel(model_config,
+                             batch_size=1,
+                             checkpoint_dir_or_path=ckpt)
   else:
     model_config = config.MUSIC_VAE_CONFIG['multi-0min-1-big']
     ckpt = os.path.expanduser(
@@ -147,12 +154,12 @@ def main(argv):
   log_dir = FLAGS.input
   real = data_utils.load(os.path.join(log_dir, 'real.pkl'))
   generated = data_utils.load(os.path.join(log_dir, 'generated.pkl'))
-  
+  yreal = data_utils.load(os.path.join(log_dir, 'yreal.pkl'))
   collection = data_utils.load(os.path.join(log_dir, 'collection.pkl'))
   idx = np.linspace(0, 40, 10).astype(np.int32)
   collection = collection[idx]
-
-
+  prior = np.random.randn(*generated.shape)
+  """
   # Get baselines.
   start_emb = real[:, 7, :]
   end_emb = real[:, 24, :]
@@ -164,6 +171,8 @@ def main(argv):
     # HACK: Since scaling of eval/train is different, re-add the real bars.
     generated[:, fixed_idx, :] = real[:, fixed_idx, :]
 
+  if FLAGS.infill:
+    #TODO currently skipped
     # Prior baseline.
     prior = np.random.randn(*generated.shape)
     prior[:, fixed_idx, :] = real[:, fixed_idx, :]    
@@ -176,19 +185,21 @@ def main(argv):
       for alpha in np.linspace(0., 1., 16+2)
   ]
   interp_baseline = np.stack(interp_baseline).transpose(1, 0, 2)
+
   start_real = real[:, idx[:7], :]
   end_real = real[:, idx[-7:], :]
   interp_baseline = np.concatenate((start_real, interp_baseline, end_real), axis=1)
   assert interp_baseline.shape == generated.shape
-
+  """
   assert real.shape == generated.shape
+
   is_multi_bar = len(generated.shape) > 2
 
   logging.info('Decoding sequences.')
   eval_seqs = {}
   for sample_split, sample_emb in (('real', real), ('gen', generated),
-                                   ('prior', prior), ('interp',
-                                                      interp_baseline)):
+                                   ('prior', prior), ('collection0',collection[0]),
+                                   ('collection10',collection[6]), ('yreal', yreal)):
     if FLAGS.gen_only and sample_split != 'gen':
       continue
 
@@ -198,6 +209,10 @@ def main(argv):
     ns_dir = os.path.join(FLAGS.output, sample_split, 'ns')
     Path(audio_dir).mkdir(parents=True, exist_ok=True)
     Path(image_dir).mkdir(parents=True, exist_ok=True)
+
+    if FLAGS.trio and sample_split != 'gen':
+      continue
+    # TODO: finish trio actions
 
     sequences = decode_emb(sample_emb[:FLAGS.n_synth],
                            vae_model,

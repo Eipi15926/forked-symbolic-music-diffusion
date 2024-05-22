@@ -173,6 +173,37 @@ def chunks_to_embeddings(sequences, model, data_converter):
       sigmas[idx[i]] = sigma[i]
   return zs, mus, sigmas
 
+def chunk_tensors_to_embeddings(tensors, model):
+  """Convert NoteSequence objects into latent space embeddings.
+  Add by myself, to be checked
+  Args:
+    tensors: A list of tensors after converted by data_converter of the model.
+    model: A TrainedModel object used for inference.
+
+  Returns:
+    A numpy matrix of shape [len(sequences), latent_dims].
+  """
+  assert model is not None, 'No model provided.'
+
+  latent_dims = model._z_input.shape[1]
+  idx = []
+  non_rest_chunks = []
+  zs = np.zeros((len(tensors), latent_dims))
+  mus = np.zeros((len(tensors), latent_dims))
+  sigmas = np.zeros((len(tensors), latent_dims))
+  for i, chunk in enumerate(tensors):
+    if chunk.sum() > 0:
+      idx.append(i)
+      non_rest_chunks.append(chunk)
+  if non_rest_chunks:
+    z, mu, sigma = model.encode(non_rest_chunks)
+    assert z.shape == mu.shape == sigma.shape
+    for i, mean in enumerate(mu):
+      zs[idx[i]] = z[i]
+      mus[idx[i]] = mean
+      sigmas[idx[i]] = sigma[i]
+  return zs, mus, sigmas
+
 
 def embeddings_to_chunks(embeddings, model, temperature=1e-3):
   """Decode latent embeddings as NoteSequences.
@@ -321,6 +352,27 @@ class Song(object):
 
     # Use the data converter to preprocess sequences
     tensors = self.data_converter.to_tensors(data).inputs[::step_size]
+    sequences = self.data_converter.from_tensors(tensors)
+
+    if fix_instruments and self.multitrack:
+      fix_instruments_for_concatenation(sequences)
+
+    return tensors, sequences
+
+  def my_chunks(self, chunk_length=None, programs=None, fix_instruments=True):
+    """Split and featurize song into chunks of tensors and NoteSequences."""
+    assert not self.reconstructed, 'Not safe to tokenize reconstructed Songs.'
+
+    data = self.note_sequence
+    step_size = self.chunk_length
+    if chunk_length is not None:
+      step_size = chunk_length
+    if programs is not None:
+      data = self.select_programs(programs)
+
+    # Use the data converter to preprocess sequences
+    tensors = self.data_converter.to_tensors(data).inputs[::step_size]
+    print("tensors list length:",len(tensors))
     sequences = self.data_converter.from_tensors(tensors)
 
     if fix_instruments and self.multitrack:

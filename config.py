@@ -27,7 +27,8 @@ melody_2bar_converter = data.OneHotMelodyConverter(
     slice_bars=2,
     gap_bars=None,
     steps_per_quarter=4,
-    dedupe_event_lists=False)
+    dedupe_event_lists=False,
+    pad_to_total_time=True)
 
 mel_2bar_nopoly_converter = data.OneHotMelodyConverter(
     skip_polyphony=True,
@@ -68,6 +69,8 @@ MUSIC_VAE_CONFIG['melody-2-big'] = configs.CONFIG_MAP[
 
 MUSIC_VAE_CONFIG['melody-16-big'] = configs.CONFIG_MAP[
     'hierdec-mel_16bar']._replace(data_converter=melody_16bar_converter)
+
+MUSIC_VAE_CONFIG['trio-16-big'] = configs.CONFIG_MAP['hierdec-trio_16bar']
 
 MUSIC_VAE_CONFIG['multi-1-big'] = configs.CONFIG_MAP[
     'hier-multiperf_vel_1bar_big']._replace(
